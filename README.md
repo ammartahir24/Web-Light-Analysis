@@ -13,7 +13,9 @@ Sor far, we have collected our dataset, run preliminary analysis and we are in i
 * Low end mobile browser page transformed through weblight
 * Desktop version of web page
 * Desktop version of web page transformed through weblight
+
 This dataset can be found here : https://drive.google.com/file/d/1h3EtF80XXlc68HjE2s-swSnK1FbnqmNG/view?usp=sharing
+
 > Parse.py parses these pages and extracts out metadata like counts of different tags, for this preliminary analysis we are looking at four particular tags:
 * div tag
 * img tag
