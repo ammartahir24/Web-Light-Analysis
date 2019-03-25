@@ -28,7 +28,8 @@ class htmlspec:
 
 
 class pagespec:
-    def __init__(self,type__):
+    def __init__(self,type__,nem):
+        self.name = nem
         self.type = type__
         self.mobile_main = htmlspec()
         self.mobile_mini = htmlspec()
@@ -132,13 +133,13 @@ with open('top-1m.csv') as csv_file:
         if count>=999:
             break
         if os.path.exists(web[1]):
-            newpage = pagespec(1)
+            newpage = pagespec(1,web[1])
             pages.append(newpage)
             newpage.handle(web[1])
             count+=1
             ind+=1
         elif os.path.exists("non_transcoded/"+web[1]):
-            newpage = pagespec(0)
+            newpage = pagespec(0,web[1])
             pages.append(newpage)
             newpage.handle("non_transcoded/"+web[1])
             ncount+=1
@@ -148,8 +149,8 @@ with open('top-1m.csv') as csv_file:
 
 with open('dataset.csv', mode='w') as ds:
     dswriter = csv.writer(ds, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-    dswriter.writerow(['Main Mobile Script tags','Main Mobile Image tags','Main Mobile Div tags','Main Mobile Hyperlink tags','Mini Mobile Script tags','Mini Mobile Image tags','Mini Mobile Div tags','Mini Mobile Hyperlink tags','Main Web Script tags','Main Web Image tags','Main Web Div tags','Main Web Hyperlink tags','Mini Web Script tags','Mini Web Image tags','Mini Web Div tags','Mini Web Hyperlink tags','Transcoded'])
+    dswriter.writerow(['Name','Main Mobile Script tags','Main Mobile Image tags','Main Mobile Div tags','Main Mobile Hyperlink tags','Mini Mobile Script tags','Mini Mobile Image tags','Mini Mobile Div tags','Mini Mobile Hyperlink tags','Main Web Script tags','Main Web Image tags','Main Web Div tags','Main Web Hyperlink tags','Mini Web Script tags','Mini Web Image tags','Mini Web Div tags','Mini Web Hyperlink tags','Transcoded'])
     for i in pages:
-        dswriter.writerow([i.mobile_main.script_count,i.mobile_main.img_count,i.mobile_main.div_count,i.mobile_main.hyp_count,i.mobile_mini.script_count,i.mobile_mini.img_count,i.mobile_mini.div_count,i.mobile_mini.hyp_count,i.web_main.script_count,i.web_main.img_count,i.web_main.div_count,i.web_main.hyp_count,i.web_mini.script_count,i.web_mini.img_count,i.web_mini.div_count,i.web_mini.hyp_count,i.type])
+        dswriter.writerow([i.name,i.mobile_main.script_count,i.mobile_main.img_count,i.mobile_main.div_count,i.mobile_main.hyp_count,i.mobile_mini.script_count,i.mobile_mini.img_count,i.mobile_mini.div_count,i.mobile_mini.hyp_count,i.web_main.script_count,i.web_main.img_count,i.web_main.div_count,i.web_main.hyp_count,i.web_mini.script_count,i.web_mini.img_count,i.web_mini.div_count,i.web_mini.hyp_count,i.type])
 
 
