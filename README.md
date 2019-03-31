@@ -21,7 +21,7 @@ This dataset can be found here : https://drive.google.com/file/d/1h3EtF80XXlc68H
 * img tag
 * script tag
 * hyperlink (a) tag
-> dataset.csv consists of the data produced by parse.py. It consists of 17 columns corresponding to each web site, 16 being counts of forementioned tags and 1 being a binary variable for whether website was transcodable by weblight or not. (Weblight does not transcode a few web sites, In our data set of 1181, 182 websites were not transcodable.)
+> dataset.csv consists of the data produced by parse.py. It consists of 17 columns corresponding to each web site, 16 being counts of forementioned tags and 1 being a binary variable for whether website was transcodable by weblight or not. (Weblight does not transcode a few web sites, In our data set of 1171, 172 websites were not transcodable.)
 
 
 > Analysis.ipynb shows analysis of dataset collected above. It gives visualisation of trend followed in transformations of web pages by web light.
