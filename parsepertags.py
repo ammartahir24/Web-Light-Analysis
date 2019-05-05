@@ -36,7 +36,7 @@ parser.feed('<html><head><title><img src="none.png">Test</title></head>'
 def stringed(ddict):
 	ret = ''
 	for k,v in ddict.iteritems():
-		ret+=(k+str(v)+'\n')
+		ret+=(k+'>>'+str(v)+'\n')
 	return ret
 
 
